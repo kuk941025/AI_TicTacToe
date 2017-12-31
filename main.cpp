@@ -238,7 +238,8 @@ void play_with_comp(treeNode *root, int size) {
 			for (j = 0; j < size; j++)
 				userTable[i][j] = updated->gTable[i][j];
 		}
-
+		if (cord.X % 2 != 0)
+			cord.X++;
 		MoveCursor(cord.X, cord.Y);
 		/*user turn*/
 		userResult = -1;
@@ -273,9 +274,9 @@ void showGtable(int **arr, int size) {
 	for (i = 0; i < size; i++) {
 		for (j = 0; j < size; j++) {
 			if (arr[i][j] == 1)
-				printf("¡Ü"); //black
+				printf("Â¡Ãœ"); //black
 			else if (arr[i][j] == 2)
-				printf("¡Û");
+				printf("Â¡Ã›");
 			else
 				printf("  ");
 		}
@@ -560,9 +561,9 @@ int place5mok(int x, int y, int **gTable, int size, int type, int vis) { //given
 		if (vis == 1) {
 			MoveCursor(x, y);
 			if (type == 1)
-				printf("¡Ü");
+				printf("Â¡Ãœ");
 			else
-				printf("¡Û");
+				printf("Â¡Ã›");
 			MoveCursor(x, y);
 		}
 		return chkTic(x, y, gTable, size, type);
